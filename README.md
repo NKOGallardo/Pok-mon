@@ -1,5 +1,5 @@
 
-<img src="Screenshot (22).png">
+<img src="images/Screenshot (22).png">
 
 # React + Vite
 
