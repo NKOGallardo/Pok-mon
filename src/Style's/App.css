@@ -81,37 +81,41 @@ body {
   font-size: 0.95rem;
 }
 
-/* Image section */
-.image-section {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Pokemon details */
+.pokemon-info {
+  border: #222 2px solid;
   border-radius: 12px;
-  padding: 1.5rem;
-  width: 90%;
-  max-width: 400px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-height: 250px;
+  padding: 2rem;
 }
 
-.image-section img {
+/* Image section */
+
+.image-section {
   width: 200px;
   height: 200px;
   object-fit: contain;
   transition: transform 0.3s ease-in-out;
-  animation: float 3s ease-in-out infinite;
-}
-
-.image-section img:hover {
-  transform: scale(1.1);
+  border-radius: 12px;
+  animation: float 3s ease-in-out;
+  margin-left: 24px;
+  margin-right: 20px;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { 
+    transform: translateY(0); 
+    transform: scale(1.50);
+  }
+  50% { 
+    transform: translateY(-10px); 
+    transform: scale(2);
+  }
 }
+
+.image-section:hover {
+  transform: scale(1.55);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+} 
 
 /* Header styling */
 .header {
