@@ -1,9 +1,10 @@
 import { useState } from "react";
-import "./App";
+import "./Style's/App.css";
 
 function StatBar({ label, value }) {
   return (
-    <div>
+    <div className="stat-bar">
+
       <span>{label}</span>
       <span> {value}</span>
     </div>
@@ -45,10 +46,10 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Pokémon Search</h1>
+    <div className="App">
+      <h1 className="header">Pokémon Search</h1>
 
-      <div>
+      <div className="search-section">
         <input
           type="text"
           placeholder="Enter Pokémon name"
@@ -61,26 +62,28 @@ function App() {
         </button>
       </div>
 
-      {error && <p>{error}</p>}
+      <p className="error">
+        {error && <p>{error}</p>}
+      </p>
 
       {pokemon && (
-        <div>
+        <div className="pokemon-info">
           <h2>
             {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)} #
             {String(pokemon.id).padStart(3, "0")}
           </h2>
 
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+          <img className="image-section" src={pokemon.sprites.front_default} alt={pokemon.name} />
 
-          <p>
+          <p className="type">
             Type: {pokemon.types.map((t) => t.type.name).join(", ")}
           </p>
 
-          <p>
+          <p className="ability">
             Ability: {pokemon.abilities.map((a) => a.ability.name).join(", ")}
           </p>
 
-          <div>
+          <div className="stats-section">
             <h3>Stats</h3>
             {pokemon.stats.map((s) => (
               <StatBar
@@ -91,8 +94,12 @@ function App() {
             ))}
           </div>
 
-          <p>Height: {(pokemon.height / 10).toFixed(1)}m</p>
-          <p>Weight: {(pokemon.weight / 10).toFixed(1)}kg</p>
+          <p className="height">
+            Height: {(pokemon.height / 10).toFixed(1)}m
+          </p>
+          <p className="weight">
+            Weight: {(pokemon.weight / 10).toFixed(1)}kg
+          </p>
         </div>
       )}
     </div>
