@@ -86,6 +86,7 @@ body {
   border: #222 2px solid;
   border-radius: 12px;
   padding: 2rem;
+  width: 100%;  
 }
 
 /* Image section */

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Style's/App.css";
+import Header from "./header";
 
 function StatBar({ label, value }) {
   return (
@@ -47,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="header">Pokémon Search</h1>
+      <h1 className="header">Pokémon Search⚡ <Header /></h1>
 
       <div className="search-section">
         <input
