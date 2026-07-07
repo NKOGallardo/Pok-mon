@@ -181,6 +181,56 @@ body {
   color: #555;
 }
 
+.developer-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b4cca;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.developer-button {
+  /* 1. The magic that makes it follow the screen */
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom of the screen */
+  right: 20px;  /* Distance from the right side of the screen */
+  
+  /* 2. Ensures it sits on top of other content */
+  z-index: 1000; 
+
+  /* 3. Styling to make it look like a nice button */
+  background-color: #0070f3;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+    background-color: #3b4cca;
+  }
+
+  50% { 
+    transform: rotate(180deg); 
+    background-color: #0070f3;
+  }
+
+  100% { 
+    transform: rotate(360deg); 
+    background-color: #3b4cca;
+  }
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 600px) {
   .header h1 { font-size: 1.6rem; }

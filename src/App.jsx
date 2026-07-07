@@ -12,6 +12,14 @@ function StatBar({ label, value }) {
   );
 }
 
+const handleDeveloperClick = () => {
+
+  trackAnalytics("Developer Link Clicked");
+
+  window.open("https://nkogallardo.link", "_blank", "noopener,noreferrer");
+
+};
+
 const STAT_LABELS = {
   hp: "HP",
   attack: "Attack",
@@ -28,21 +36,31 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   async function fetchData() {
+    
     if (!pokemonName.trim()) return;
     setLoading(true);
+
     try {
       const res = await fetch(
+
         `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`
+
       );
+
       if (!res.ok) throw new Error("Pokémon not found");
       const data = await res.json();
+
       setPokemon(data);
       setError("");
     } catch (err) {
+
       setError(err.message);
       setPokemon(null);
+
     } finally {
+
       setLoading(false);
+
     }
   }
 
@@ -60,6 +78,12 @@ function App() {
         />
         <button onClick={fetchData}>
           {loading ? "Loading..." : "Search"}
+        </button>
+        <button onClick={() => { 
+          setPokemonName(""); 
+          setPokemon(null); 
+          setError(""); }}>
+            Clear
         </button>
       </div>
 
@@ -103,6 +127,12 @@ function App() {
           </p>
         </div>
       )}
+      <button 
+          className="developer-button" 
+          onClick={handleDeveloperClick}
+      >
+        Developer
+      </button>
     </div>
   );
 }
