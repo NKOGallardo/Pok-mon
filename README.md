@@ -2,6 +2,7 @@
 
 A fast and simple Pokémon search tool built with **React + Vite**, using the free **PokéAPI**.  
 Type any Pokémon’s name and instantly see its sprite in a smooth, minimal interface.
+learned a lot from res,req to api calla
 
 ---
 
